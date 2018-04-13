@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 
 public class Element {
+	static private int idCounter = 0;
 	private String id;
 	private String name;
 	private Image image;
@@ -12,7 +13,17 @@ public class Element {
 	private String parentID;	
 	
 	public Element() {
-		// TODO Auto-generated constructor stub
+		id = newID();
+		System.out.println(id);
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	private String newID() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
