@@ -25,6 +25,10 @@ public class CreateProjectController {
 		}
 
 		String description = taProjectDescription.getText();
+		if (!InputValidator.validateDescription(description)) {
+			System.out.println("Invalid description");
+			return;
+		}
 		Project newProject;
 		if ((description != null) && (description.trim().length() > 0)) {
 			newProject = new Project(projectName, description);
