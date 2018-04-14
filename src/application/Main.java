@@ -2,6 +2,8 @@ package application;
 
 import java.io.IOException;
 
+import application.view.CreateProjectController;
+import application.view.ProjectMenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,26 +12,19 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	private static Main uniqueInstance;
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	private ProjectController projectController;
 
-	@Override
+ 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("XT-004");
+
 		projectController = new ProjectController();
 		initMenuRoot();
 
 		showProjectMenu();
-	}
-
-	public static synchronized Main getInstance() {
-		if (uniqueInstance == null) {
-			uniqueInstance = new Main();
-		}
-		return uniqueInstance;
 	}
 
 	/**
@@ -60,9 +55,10 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("view/ProjectMenu.fxml"));
 			AnchorPane projectMenu = (AnchorPane) loader.load();
-			// INCASE
-			// ProjectMenuController controller = loader.getController();
 
+			ProjectMenuController controller = loader.getController();
+			controller.setMainApp(this);
+			
 			// Set person overview into the center of root layout
 			rootLayout.setCenter(projectMenu);
 		} catch (IOException e) {
@@ -71,16 +67,19 @@ public class Main extends Application {
 	}
 
 	public void showCreateProjectDisplay() {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/CreateProjectDisplay.fxml"));
-			AnchorPane createProjectDisplay = (AnchorPane) loader.load();
+	    try {
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(Main.class.getResource("view/CreateProjectDisplay.fxml"));
+	        AnchorPane createProjectDisplay = (AnchorPane) loader.load();
 
+	        CreateProjectController createProjectController = loader.getController();
+	        createProjectController.setMainApp(this);
+			
 			// Set person overview into the center of root layout
 			rootLayout.setCenter(createProjectDisplay);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	/**

@@ -7,6 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class CreateProjectController {
+	private Main main;
 
 	@FXML
 	private TextField tfProjectName;
@@ -25,11 +26,21 @@ public class CreateProjectController {
 			newProject = new Project(projectName);
 		}
 		System.out.println("Project Created - " + newProject.toString());
-		Main.getInstance().showProjectMenu();
+		main.showProjectMenu();
 	}
 
 	@FXML
 	private void btnReturn() {
-		Main.getInstance().showProjectMenu();
+		main.showProjectMenu();
+	}
+	
+	/**
+	 * Sets the local reference to the main class
+	 * 
+	 * @param main
+	 *            - reference to main class
+	 */
+	public void setMainApp(Main main) {
+		this.main = main;
 	}
 }
