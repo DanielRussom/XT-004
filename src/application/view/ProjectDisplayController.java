@@ -5,8 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class ProjectDisplayController {
-	private Main main;
-	
 	@FXML
 	private Label lblTitle;
 	@FXML
@@ -16,7 +14,7 @@ public class ProjectDisplayController {
 	
 	@FXML
 	private void btnReturn() {
-		main.showProjectMenu();
+		Main.getInstance().showProjectMenu();
 	}
 
 }
