@@ -6,24 +6,15 @@ import javafx.scene.image.Image;
 
 public class Element {
 	static private int idCounter = 0;
-	private String id;
+	private int id;
 	private String name;
 	private Image image;
 	private ArrayList<String> linkIDs;
 	private String parentID;	
 	
 	public Element() {
-		id = newID();
+		id = idCounter;
+		idCounter++;
 		System.out.println(id);
 	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	private String newID() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

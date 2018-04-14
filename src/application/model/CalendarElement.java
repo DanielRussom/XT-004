@@ -9,6 +9,7 @@ public class CalendarElement extends Element {
 	private ArrayList<String> prerequisiteTaskIDs;	
 	
 	public CalendarElement() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
