@@ -31,10 +31,10 @@ public class Project {
 	public String toString() {
 		String toString = "Project " + id + ": [name = " + name + ", ";
 		if (description != null && !description.isEmpty()) {
-			  toString = toString + "description = " + description + ", ";
-			}
-		 toString = toString + "elements = " + elements + "]";
-		 return toString;
+			toString = toString + "description = " + description + ", ";
+		}
+		toString = toString + "elements = " + elements + "]";
+		return toString;
 	}
 
 }

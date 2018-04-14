@@ -12,14 +12,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	private Main instance;
 	private Stage primaryStage;
 	private BorderPane rootLayout;
+	private ProjectController projectController;
 
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("XT-004");
-
+		projectController = new ProjectController();
 		initMenuRoot();
 
 		showProjectMenu();
@@ -66,7 +68,6 @@ public class Main extends Application {
 
 	public void showCreateProjectDisplay() {
 	    try {
-
 	        FXMLLoader loader = new FXMLLoader();
 	        loader.setLocation(Main.class.getResource("view/CreateProjectDisplay.fxml"));
 	        AnchorPane createProjectDisplay = (AnchorPane) loader.load();
