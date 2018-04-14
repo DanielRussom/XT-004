@@ -1,16 +1,15 @@
 package application.display;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 public class CreateProjectController {
 
 	@FXML
-	private void btnCreateNewProject() {
-		
-	}
-
+	private TextField tfProjectName;
+	
 	@FXML
-	private void btnOpenProject() {
+	private void btnCreateProject() {
 		
 	}
 	
