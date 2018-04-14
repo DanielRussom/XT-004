@@ -1,6 +1,7 @@
 package application.view;
 
 import application.Main;
+import application.model.Project;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -17,6 +18,12 @@ public class ProjectDisplayController {
 	@FXML
 	private void btnReturn() {
 		main.showProjectMenu();
+	}
+	
+	public void displayProject(Project currentProject) {
+		lblTitle.setText(currentProject.getName());
+		lblID.setText(Integer.toString(currentProject.getId()));
+		lblDescription.setText(currentProject.getDescription());
 	}
 
 	/**
