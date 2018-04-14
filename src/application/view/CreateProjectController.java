@@ -1,5 +1,6 @@
 package application.view;
 
+import application.InputValidator;
 import application.Main;
 import application.model.Project;
 import javafx.fxml.FXML;
@@ -18,6 +19,11 @@ public class CreateProjectController {
 	@FXML
 	private void btnCreateProject() {
 		String projectName = tfProjectName.getText();
+		if (!InputValidator.validateName(projectName)) {
+			System.out.println("Invalid name");
+			return;
+		}
+
 		String description = taProjectDescription.getText();
 		Project newProject;
 		if ((description != null) && (description.trim().length() > 0)) {
@@ -33,7 +39,7 @@ public class CreateProjectController {
 	private void btnReturn() {
 		main.showProjectMenu();
 	}
-	
+
 	/**
 	 * Sets the local reference to the main class
 	 * 
