@@ -12,8 +12,8 @@ public class ProjectMenuController {
 	}
 
 	@FXML
-	private void btnOpenProject() {
-
+	private void btnOpenSelectProject() {
+		
 	}
 
 	@FXML

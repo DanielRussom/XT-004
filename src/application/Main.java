@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import application.view.CreateProjectController;
 import application.view.ProjectMenuController;
+import application.view.SelectProjectController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,7 +21,6 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("XT-004");
-
 		projectController = new ProjectController();
 		initMenuRoot();
 
@@ -74,6 +74,22 @@ public class Main extends Application {
 
 	        CreateProjectController createProjectController = loader.getController();
 	        createProjectController.setMainApp(this);
+			
+			// Set person overview into the center of root layout
+			rootLayout.setCenter(createProjectDisplay);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void showSelectProjectDisplay() {
+		try {
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(Main.class.getResource("view/SelectProjectDisplay.fxml"));
+	        AnchorPane createProjectDisplay = (AnchorPane) loader.load();
+
+	        SelectProjectController selectProjectController = loader.getController();
+	        selectProjectController.setMainApp(this);
 			
 			// Set person overview into the center of root layout
 			rootLayout.setCenter(createProjectDisplay);

@@ -17,7 +17,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="lblDescription" layoutX="202.0" layoutY="109.0" text="Description:" />
+      <Label fx:id="lblDescription" layoutX="202.0" layoutY="109.0" prefWidth="196.0" text="Description:" />
       <Button layoutX="134.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnReturn" text="Return" />
    </children>
 </AnchorPane>

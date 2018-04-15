@@ -3,7 +3,7 @@ package application;
 import java.util.ArrayList;
 
 public class ProjectController {
-	ArrayList<String> projectIDs;
+	private static ArrayList<String> projectIDs;
 
 	public ProjectController() {
 		initialize();
@@ -12,7 +12,7 @@ public class ProjectController {
 	/**
 	 * Initializes variables in the project controller
 	 */
-	public void initialize() {
+	private void initialize() {
 		projectIDs = new ArrayList<String>();
 	}
 
@@ -22,8 +22,15 @@ public class ProjectController {
 	 * @param id
 	 *            - ID to be added
 	 */
-	public void addProjectID(String id) {
+	public static void addProjectID(String id) {
 		projectIDs.add(id);
+	}
+
+	/**
+	 * @return the projectIDs
+	 */
+	public static ArrayList<String> getProjectIDs() {
+		return projectIDs;
 	}
 
 }
