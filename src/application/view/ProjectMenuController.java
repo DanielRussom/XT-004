@@ -13,7 +13,7 @@ public class ProjectMenuController {
 
 	@FXML
 	private void btnOpenSelectProject() {
-		
+		main.showSelectProjectDisplay();
 	}
 
 	@FXML
